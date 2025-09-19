@@ -11,6 +11,11 @@ void main(List<String> arguments) {
   fl[2] = 3;
   fl[3] = 4;
   // fl[4] = 5;
+  // stdout.writeln(fl);
 
-  stdout.writeln(fl);
+  // Growablelist
+  var gl = [1, 2, 3];
+  gl.add(4);
+  gl.remove(3);
+  stdout.writeln(gl);
 }
