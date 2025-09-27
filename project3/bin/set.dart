@@ -34,7 +34,7 @@ void main() {
     String nilai1 = inputNilai ?? '';
     setNilai4.add(nilai1);
   }
-  // print(setNilai4);
+  print(setNilai4);
   // print(setNilai4.elementAt(1)); //mengambil data berdasarkan index
 
   var NilaiList = setNilai4.toList();
