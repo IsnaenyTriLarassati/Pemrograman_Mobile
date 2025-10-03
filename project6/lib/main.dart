@@ -59,7 +59,7 @@ class Isnaapp extends StatelessWidget {
                 fallbackHeight: 100,
                 fallbackWidth: 100,
               ),
-               
+
             ],
           ),
         ),
@@ -125,39 +125,3 @@ class Isnaapp extends StatelessWidget {
     );
   }
 }
-
-
-class MyStateful extends StatefulWidget {
-  const MyStateful({super.key});
-
-  @override
-  State<MyStateful> createState() => _MyStatefulState();
-}
-
-class _MyStatefulState extends State<MyStateful> {
-  int counter = 0;
-
-  void tambah() {
-    setState(() {
-      counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(
-          "Counter: $counter",
-          style: const TextStyle(fontSize: 24),
-        ),
-        ElevatedButton(
-          onPressed: tambah,
-          child: const Text("Tambah"),
-        ),
-      ],
-    );
-  }
-}
-
