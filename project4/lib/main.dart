@@ -131,43 +131,43 @@ class IsnaApp extends StatelessWidget {
                 // Lirik Lagu
                 Text(
                   """
-Perlahan akan
-Kuajarkan cara
-Menanam, menuai
-Baik buruk di dunia
+                  Perlahan akan
+                  Kuajarkan cara
+                  Menanam, menuai
+                  Baik buruk di dunia
 
-Kuwarnai tanganmu yang mati
-Biar kau lihat dunia tak lagi menyakiti
+                  Kuwarnai tanganmu yang mati
+                  Biar kau lihat dunia tak lagi menyakiti
 
-Dan kubisikkan asal kau tahu bagaimana
-Rasanya bahagia sepenuhnya sampai
-Ku merasa lega, kau merasa lega
-Ku sampai di sana
+                  Dan kubisikkan asal kau tahu bagaimana
+                  Rasanya bahagia sepenuhnya sampai
+                  Ku merasa lega, kau merasa lega
+                  Ku sampai di sana
 
-Perlahan telah
-Kau ajarkan cara
-Menerima rasa
-Baik buruk yang ku punya
+                  Perlahan telah
+                  Kau ajarkan cara
+                  Menerima rasa
+                  Baik buruk yang ku punya
 
-Kau panggil jahat yang menyelimuti
-Sampai ku tahu dunia tak lagi menyakiti
+                  Kau panggil jahat yang menyelimuti
+                  Sampai ku tahu dunia tak lagi menyakiti
 
-Dan kubisikkan asal kau tahu bagaimana
-Rasanya bahagia sepenuhnya sampai
-Ku merasa lega, kau merasa lega
-Ku sampai di sana
+                  Dan kubisikkan asal kau tahu bagaimana
+                  Rasanya bahagia sepenuhnya sampai
+                  Ku merasa lega, kau merasa lega
+                  Ku sampai di sana
 
-Perang telah usai
-Perang telah usai
-Aku bisa pulang
-Kubaringkan panah
-Dan berteriak, "Menang"
+                  Perang telah usai
+                  Perang telah usai
+                  Aku bisa pulang
+                  Kubaringkan panah
+                  Dan berteriak, "Menang"
 
-Dan kubisikkan asal kau tahu bagaimana
-Rasanya bahagia sepenuhnya sampai
-Ku merasa lega, kau merasa lega
-Ku sampai di sana, kau sampai di sana
-Ku sampai di sana, kau sampai di sana
+                  Dan kubisikkan asal kau tahu bagaimana
+                  Rasanya bahagia sepenuhnya sampai
+                  Ku merasa lega, kau merasa lega
+                  Ku sampai di sana, kau sampai di sana
+                  Ku sampai di sana, kau sampai di sana
                   """,
                   style: TextStyle(
                     fontSize: 18,
