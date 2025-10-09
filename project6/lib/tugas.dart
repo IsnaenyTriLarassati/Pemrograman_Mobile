@@ -87,7 +87,6 @@ class _MainPageState extends State<MainPage> {
 // Profile Page
 class ProfilePage extends StatelessWidget {
   final Map<String, int> izinData;
-
   const ProfilePage({super.key, required this.izinData});
 
   @override
@@ -216,47 +215,11 @@ class CounterPage extends StatefulWidget {
 class _CounterPageState extends State<CounterPage> {
   final TextEditingController _matkulController = TextEditingController();
 
-  void _showAddMatkulDialog() {
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: const Text("Tambah Mata Kuliah"),
-        content: TextField(
-          controller: _matkulController,
-          decoration: const InputDecoration(
-            hintText: "Masukkan nama mata kuliah",
-          ),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.pop(context);
-              _matkulController.clear();
-            },
-            child: const Text("Batal"),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              final newMatkul = _matkulController.text.trim();
-              if (newMatkul.isNotEmpty &&
-                  !widget.izinData.containsKey(newMatkul)) {
-                widget.onAddMatkul(newMatkul);
-              }
-              Navigator.pop(context);
-              _matkulController.clear();
-            },
-            child: const Text("Tambah"),
-          ),
-        ],
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Izin Kehadiran per Mata Kuliah"),
+        title: const Text("Counter Izin Kehadiran"),
         backgroundColor: Colors.teal,
       ),
       body: ListView(
@@ -318,7 +281,47 @@ class _CounterPageState extends State<CounterPage> {
       //FloatingActionButton untuk tambah mata kuliah
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.teal,
-        onPressed: _showAddMatkulDialog,
+        onPressed: () {
+          showDialog(
+            context: context,
+            builder: (context) => AlertDialog(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12)),
+              contentPadding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+              title: const Text("Tambah Mata Kuliah"),
+              content: SizedBox(
+                width: 300,
+                child: TextField(
+                  controller: _matkulController,
+                  decoration: const InputDecoration(
+                    hintText: "Masukkan nama mata kuliah",
+                  ),
+                ),
+              ),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                    _matkulController.clear();
+                  },
+                  child: const Text("Batal"),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    final newMatkul = _matkulController.text.trim();
+                    if (newMatkul.isNotEmpty &&
+                        !widget.izinData.containsKey(newMatkul)) {
+                      widget.onAddMatkul(newMatkul);
+                    }
+                    Navigator.pop(context);
+                    _matkulController.clear();
+                  },
+                  child: const Text("Tambah"),
+                ),
+              ],
+            ),
+          );
+        },
         child: const Icon(Icons.add),
       ),
     );
