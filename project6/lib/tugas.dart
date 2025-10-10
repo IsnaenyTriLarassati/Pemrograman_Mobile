@@ -213,7 +213,7 @@ class CounterPage extends StatefulWidget {
 }
 
 class _CounterPageState extends State<CounterPage> {
-  final TextEditingController _matkulController = TextEditingController();
+  String namaMatkulBaru = ""; // Variabel untuk menyimpan input
 
   @override
   Widget build(BuildContext context) {
@@ -228,8 +228,7 @@ class _CounterPageState extends State<CounterPage> {
           return Card(
             elevation: 3,
             margin: const EdgeInsets.symmetric(vertical: 10),
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
             child: Padding(
               padding: const EdgeInsets.all(16),
               child: Column(
@@ -292,7 +291,9 @@ class _CounterPageState extends State<CounterPage> {
               content: SizedBox(
                 width: 300,
                 child: TextField(
-                  controller: _matkulController,
+                  onChanged: (value) {
+                    namaMatkulBaru = value; // Simpan input ke variabel
+                  },
                   decoration: const InputDecoration(
                     hintText: "Masukkan nama mata kuliah",
                   ),
@@ -302,19 +303,19 @@ class _CounterPageState extends State<CounterPage> {
                 TextButton(
                   onPressed: () {
                     Navigator.pop(context);
-                    _matkulController.clear();
+                    namaMatkulBaru = "";
                   },
                   child: const Text("Batal"),
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    final newMatkul = _matkulController.text.trim();
+                    final newMatkul = namaMatkulBaru.trim();
                     if (newMatkul.isNotEmpty &&
                         !widget.izinData.containsKey(newMatkul)) {
                       widget.onAddMatkul(newMatkul);
                     }
                     Navigator.pop(context);
-                    _matkulController.clear();
+                    namaMatkulBaru = "";
                   },
                   child: const Text("Tambah"),
                 ),
