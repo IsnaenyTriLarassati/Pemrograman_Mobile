@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'tugas_cameraapp.dart';
+import 'tugas_camera.dart';
 
 void main() {
   runApp(const MyApp());
