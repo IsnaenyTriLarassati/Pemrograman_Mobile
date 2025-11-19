@@ -6,23 +6,18 @@ part of 'user.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-User _$UserFromJson(Map json) {
-  $checkKeys(
-    json,
-    requiredKeys: const ['id', 'name', 'email', 'created_at'],
-    disallowNullValues: const ['id', 'name', 'email'],
-  );
-  return User(
-    id: (json['id'] as num).toInt(),
-    name: json['name'] as String,
-    email: json['email'] as String,
-    createdAt: User._parseDateTime(json['created_at']),
-  );
-}
+User _$UserFromJson(Map<String, dynamic> json) => User(
+  id: (json['id'] as num?)?.toInt(),
+  name: json['name'] as String?,
+  email: json['email'] as String?,
+  createdAt: json['createdAt'] == null
+      ? null
+      : DateTime.parse(json['createdAt'] as String),
+);
 
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
   'id': instance.id,
   'name': instance.name,
   'email': instance.email,
-  'created_at': User._dateTimeToJson(instance.createdAt),
+  'createdAt': instance.createdAt?.toIso8601String(),
 };
